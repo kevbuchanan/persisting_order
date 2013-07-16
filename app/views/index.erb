@@ -1,0 +1,28 @@
+<style type="text/css">
+  .container {
+    margin: 20px auto;
+    width: 600px;
+    padding: 0px 20px 20px 20px;
+    border: 1px dotted black;
+  }
+  th {
+    text-align: left;
+  }
+
+  .sortable-list li {
+    border: 1px solid #999;
+    background-color: #CCC;
+    margin-bottom: 5px;
+    padding: 5px;
+    list-style-type: none;
+  }
+</style>
+
+<div class="container">
+  <h1>My List</h1>
+  <ul class="sortable-list">
+    <% @items.each do |item| %>
+      <li><%= item.name %></li>
+    <% end %>
+  </ul>
+</div>
