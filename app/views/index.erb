@@ -9,7 +9,7 @@
     text-align: left;
   }
 
-  .sortable-list li {
+  #sortable li {
     border: 1px solid #999;
     background-color: #CCC;
     margin-bottom: 5px;
@@ -20,9 +20,9 @@
 
 <div class="container">
   <h1>My List</h1>
-  <ul class="sortable-list">
+  <ul id="sortable">
     <% @items.each do |item| %>
-      <li><%= item.name %></li>
+      <li id='<%= item.id %>'><%= item.name %></li>
     <% end %>
   </ul>
 </div>

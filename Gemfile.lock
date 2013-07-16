@@ -51,9 +51,10 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   activesupport
+  eventmachine (= 1.0.0)
   faker
   pg
   rake
   rspec
   sinatra
-  thin
+  thin (= 1.5.0)

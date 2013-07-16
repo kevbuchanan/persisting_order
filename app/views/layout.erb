@@ -7,8 +7,32 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    $( "#sortable" ).sortable({ 
+      axis: "y",
+      start: function(event, ui) {
+        start = $(ui.item).index();
+      },
+      update: function(event, ui) {
+        item = $(ui.item).attr('id');
+        end = $(ui.item).index();
 
-  <title></title>
+        var sorted = $('#sortable').sortable("toArray");
+
+        $.post("/items/order", { order: sorted} );
+
+        console.log (sorted);
+      }
+    });
+    $( "#sortable" ).disableSelection();
+  });
+  </script>
+  <title>Persisting Order</title>
 </head>
 <body>
   <%= yield %>
