@@ -24,12 +24,11 @@
 
         var sorted = $('#sortable').sortable("toArray");
 
-        $.post("/items/order", { order: sorted} );
-
-        console.log (sorted);
+        $.post("/items/order", {order: sorted} );
+        console.log(sorted)
       }
     });
-    $( "#sortable" ).disableSelection();
+    $("#sortable").disableSelection();
   });
   </script>
   <title>Persisting Order</title>
